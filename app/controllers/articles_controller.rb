@@ -20,4 +20,9 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  def delete
+    Article.find(params[:id]).destroy
+    redirect_to '/articles'
+  end
 end
