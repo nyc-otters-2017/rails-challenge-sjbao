@@ -1,7 +1,7 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 <% if @article.image.exists? %>
-  <p><%= image_tag @article.image.url %></p>
+  <p><%= image_tag @article.image.url(:medium) %></p>
 <% end %>
 <ul>
   <% @comment.errors.full_messages.each do |error| %>
