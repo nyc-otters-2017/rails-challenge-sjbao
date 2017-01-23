@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   def index
+    Tag.includes(:taggings).where( :taggings => { :article_id => nil } ).destroy_all
     @tags =  Tag.order(:name).group_by { |tag| tag.name[0] }
   end
 
