@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_filter :require_login, only: [:destroy]
   def index
     Tag.includes(:taggings).where( :taggings => { :article_id => nil } ).destroy_all
     @tags =  Tag.order(:name).group_by { |tag| tag.name[0] }
