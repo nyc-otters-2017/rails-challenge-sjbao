@@ -4,7 +4,9 @@ class TagsController < ApplicationController
   end
 
   def show
-
+    @tag = Tag.find(params[:id])
+    @articles = @tag.articles
+    render 'articles/index'
   end
 
   def destroy
