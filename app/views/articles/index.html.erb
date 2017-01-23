@@ -1,4 +1,9 @@
-<h1> All Articles</h1>
+<% if @tag %>
+  <h1> All Articles with "<%= @tag.name %>"</h1>
+<% else %>
+  <h1> All Articles </h1>
+<% end %>
+
 <ul id="articles">
   <% @articles.each do |article| %>
     <li><%= link_to article.title, article, class: 'article_title' %></li>

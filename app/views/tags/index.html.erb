@@ -1,0 +1,7 @@
+<h1>Articles by Tags</h1>
+<% @tags.each do |tag_group| %>
+  <h3><%= tag_group.first %></h3>
+  <% tag_group.last.each do |tag| %>
+    <%= link_to tag.name, tag %>
+  <% end %>
+<% end %>

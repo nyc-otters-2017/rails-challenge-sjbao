@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/tags' => 'tags#index', as: 'tags'
+  get '/tags/:id' => 'tags#show', as: 'tag'
+  delete '/tags/:id' => 'tags#destroy'
+
   # get '/articles' => 'articles#index'
   # get '/articles/new' => 'articles#new', as: 'new_article'
   # post '/articles' => 'articles#create'
